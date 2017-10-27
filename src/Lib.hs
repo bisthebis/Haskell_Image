@@ -11,4 +11,8 @@ save :: IO ()
 save = writeImageExact BMP [] "./pic.bmp" checkerBoard
 
 someFunc :: IO ()
-someFunc = save
+someFunc = do
+    displayImage checkerBoard
+    save
+    getLine
+    return ()
